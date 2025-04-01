@@ -1,0 +1,70 @@
+/* Redefine alguns estilos padrão */
+body, h1, h2, h3, p, ul, li, button {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Estilização geral do corpo */
+body {
+  font-family: 'Arial', sans-serif;
+  background: linear-gradient(135deg, #cb2711, #fa8500);
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+/* Container do jogo */
+.game-container {
+  background: rgba(0, 0, 0, 0.6);
+  padding: 8rem;
+  border-radius: 0.625rem;
+  box-shadow: 0 0.25rem 0.625rem rgba(0, 0, 0, 0.3);
+  text-align: center;
+  width: 80%;
+  max-width: 50rem;
+}
+
+/* Estilização do título */
+.game-container h1 {
+  font-size: 2rem;
+  margin-bottom: 1.25rem;
+}
+
+/* Estilização dos botões */
+button {
+  background: #fcb125;
+  color: #fff;
+  border: none;
+  padding: 0.625rem 1.25rem;
+  margin: 1.625rem 0.3125rem;
+  border-radius: 0.3125rem;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+button:hover {
+  background: #cb1111;
+}
+
+/* Exibição do resultado */
+.result h3 {
+  font-size: 1.5rem;
+  margin-top: 1.25rem;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.result p {
+  font-size: 1.125rem;
+}
+
+.player-choice, .computer-choice {
+  font-size: 1.125rem;
+  margin-top: 0.625rem;
+  text-transform: uppercase;
+}
