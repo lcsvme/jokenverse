@@ -1,22 +1,49 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/login.css">
+    
+    <!-- Firebase v10 (Compat) -->
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-auth-compat.js"></script>
+    
+    <script>
+      // Configuração do Firebase
+      const firebaseConfig = {
+        apiKey: "AIzaSyB86XCXgo0DVTvCeMQRr3VMk6uqUyPKh7U",
+        authDomain: "jokenverse-lcsvme.firebaseapp.com",
+        projectId: "jokenverse-lcsvme",
+        storageBucket: "jokenverse-lcsvme.appspot.com",
+        messagingSenderId: "660280808860",
+        appId: "1:660280808860:web:e13d809fd80b42137ae459",
+        measurementId: "G-5Q86PPP3R9"
+      };
+
+      // Inicializa o Firebase
+      firebase.initializeApp(firebaseConfig);
+    </script>
+
     <title>Área de Login</title>
 </head>
 <body>
     <section class="login-container">
         <h1 id="login-title">Área de Login</h1>
         <div class="login-info">
-            <form id="form">
-                <input type="text" class="username" placeholder="Username" required>
-                <input type="password" class="password" placeholder="Password" required>
-                <button type="submit" class="login">Login</button>
+            <form id="loginForm">
+                <input type="email" id="email" placeholder="Digite seu e-mail.." required>
+                <input type="password" id="password" placeholder="Digite sua senha.." required>
+                <button type="submit" id="btn">Entrar</button>
             </form>
+            
+            <p id="errorMessage" style="color: red;"></p>
+            
+            <button id="registerBtn">Cadastrar</button>
+            <button id="resetBtn">Esqueci a senha</button>
         </div>
-      </section>    
-      <script src="js/auth.js"></script>
+    </section>
+    
+    <script src="js/auth.js"></script>
 </body>
 </html>

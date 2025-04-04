@@ -50,21 +50,3 @@ button {
 button:hover {
   background: #cb1111;
 }
-
-/* Exibição do resultado */
-.result h3 {
-  font-size: 1.5rem;
-  margin-top: 1.25rem;
-  font-weight: bold;
-  text-transform: uppercase;
-}
-
-.result p {
-  font-size: 1.125rem;
-}
-
-.player-choice, .computer-choice {
-  font-size: 1.125rem;
-  margin-top: 0.625rem;
-  text-transform: uppercase;
-}
