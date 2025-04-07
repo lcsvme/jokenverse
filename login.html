@@ -9,20 +9,6 @@
   <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-auth-compat.js"></script>
 
-  <!-- Firebase Config -->
-  <script>
-    const firebaseConfig = {
-      apiKey: "AIzaSyB86XCXgo0DVTvCeMQRr3VMk6uqUyPKh7U",
-      authDomain: "jokenverse-lcsvme.firebaseapp.com",
-      projectId: "jokenverse-lcsvme",
-      storageBucket: "jokenverse-lcsvme.appspot.com",
-      messagingSenderId: "660280808860",
-      appId: "1:660280808860:web:e13d809fd80b42137ae459",
-      measurementId: "G-5Q86PPP3R9"
-    };
-    firebase.initializeApp(firebaseConfig);
-  </script>
-
   <link rel="stylesheet" href="css/login.css" />
 </head>
 <body>
@@ -38,23 +24,6 @@
     <button class="btn btn-login" onclick="login()">Entrar</button>
     <button class="btn btn-secundario" onclick="window.location.href='registro.html'">Criar conta</button>
   </div>
-
-  <script>
-    function login() {
-      const email = document.getElementById("email").value;
-      const password = document.getElementById("password").value;
-
-      firebase.auth().signInWithEmailAndPassword(email, password)
-        .then((userCredential) => {
-          window.location.href = "painel.html";
-        })
-        .catch((error) => {
-          alert("Erro: " + error.message);
-        });
-    }
-  </script>
-  <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-auth-compat.js"></script>
-  <script src="js/auth.js"></script> 
+    <script src="js/auth.js"></script>
 </body>
 </html>

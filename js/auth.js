@@ -1,4 +1,3 @@
-// --- Firebase Configuração ---
 const firebaseConfig = {
     apiKey: "AIzaSyB86XCXgo0DVTvCeMQRr3VMk6uqUyPKh7U",
     authDomain: "jokenverse-lcsvme.firebaseapp.com",
@@ -11,7 +10,7 @@ const firebaseConfig = {
   
   firebase.initializeApp(firebaseConfig);
   
-  // --- LOGIN ---
+  // Login
   function login() {
     const email = document.getElementById("email").value;
     const password = document.getElementById("password").value;
@@ -21,11 +20,11 @@ const firebaseConfig = {
         window.location.href = "painel.html";
       })
       .catch((error) => {
-        alert("Erro no login: " + error.message);
+        alert("Erro ao fazer login: " + error.message);
       });
   }
   
-  // --- REGISTRO ---
+  // Registro
   function createAccount() {
     const email = document.getElementById("new-email").value;
     const password = document.getElementById("new-password").value;
@@ -40,14 +39,14 @@ const firebaseConfig = {
       });
   }
   
-  // --- LOGOUT ---
+  // Logout
   function logout() {
     firebase.auth().signOut().then(() => {
       window.location.href = "login.html";
     });
   }
   
-  // --- VERIFICAÇÃO AUTOMÁTICA DE SESSÃO NO PAINEL ---
+  // Verificação de sessão no painel
   function verificarSessaoPainel() {
     firebase.auth().onAuthStateChanged((user) => {
       if (!user) {
