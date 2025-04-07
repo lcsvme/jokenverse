@@ -1,63 +1,58 @@
-// Cadastro de usuário
-document.getElementById("registerBtn").addEventListener("click", function() {
-    const email = prompt("Digite seu e-mail:");
-    if (!email) return;
-    
-    const password = prompt("Digite uma senha (mínimo 6 caracteres):");
-    if (!password) return;
-
-    firebase.auth().createUserWithEmailAndPassword(email, password)
-        .then(() => {
-            alert("Cadastro realizado com sucesso!\nFaça login com suas credenciais.");
-        })
-        .catch((error) => {
-            alert("Erro no cadastro: " + error.message);
-        });
-});
-
-// Redefinição de senha
-document.getElementById("resetBtn").addEventListener("click", function() {
-    const email = prompt("Digite o e-mail cadastrado:");
-    if (!email) return;
-
-    firebase.auth().sendPasswordResetEmail(email)
-        .then(() => {
-            alert("E-mail de redefinição enviado!\nVerifique sua caixa de entrada.");
-        })
-        .catch((error) => {
-            alert("Erro: " + error.message);
-        });
-});
-
-// Login
-document.getElementById("loginForm").addEventListener("submit", function(event) {
-    event.preventDefault();
-
+// --- Firebase Configuração ---
+const firebaseConfig = {
+    apiKey: "AIzaSyB86XCXgo0DVTvCeMQRr3VMk6uqUyPKh7U",
+    authDomain: "jokenverse-lcsvme.firebaseapp.com",
+    projectId: "jokenverse-lcsvme",
+    storageBucket: "jokenverse-lcsvme.appspot.com",
+    messagingSenderId: "660280808860",
+    appId: "1:660280808860:web:e13d809fd80b42137ae459",
+    measurementId: "G-5Q86PPP3R9"
+  };
+  
+  firebase.initializeApp(firebaseConfig);
+  
+  // --- LOGIN ---
+  function login() {
     const email = document.getElementById("email").value;
     const password = document.getElementById("password").value;
-    const errorMessage = document.getElementById("errorMessage");
-    const loginBtn = document.querySelector("#loginForm button");
-
-    // Mostra loading no botão
-    loginBtn.disabled = true;
-    loginBtn.textContent = "Carregando...";
-    errorMessage.textContent = "";
-
+  
     firebase.auth().signInWithEmailAndPassword(email, password)
-        .then(() => {
-            window.location.href = "painel.html"; // Redireciona após login
-        })
-        .catch((error) => {
-            errorMessage.textContent = "Erro: " + error.message;
-            loginBtn.disabled = false;
-            loginBtn.textContent = "Entrar";
-        });
-});
-
-// Verifica se usuário já está logado
-firebase.auth().onAuthStateChanged((user) => {
-    if (user) {
-        // Se já estiver logado, redireciona para o painel
+      .then(() => {
         window.location.href = "painel.html";
-    }
-});
+      })
+      .catch((error) => {
+        alert("Erro no login: " + error.message);
+      });
+  }
+  
+  // --- REGISTRO ---
+  function createAccount() {
+    const email = document.getElementById("new-email").value;
+    const password = document.getElementById("new-password").value;
+  
+    firebase.auth().createUserWithEmailAndPassword(email, password)
+      .then(() => {
+        alert("Conta criada com sucesso!");
+        window.location.href = "painel.html";
+      })
+      .catch((error) => {
+        alert("Erro ao criar conta: " + error.message);
+      });
+  }
+  
+  // --- LOGOUT ---
+  function logout() {
+    firebase.auth().signOut().then(() => {
+      window.location.href = "login.html";
+    });
+  }
+  
+  // --- VERIFICAÇÃO AUTOMÁTICA DE SESSÃO NO PAINEL ---
+  function verificarSessaoPainel() {
+    firebase.auth().onAuthStateChanged((user) => {
+      if (!user) {
+        window.location.href = "login.html";
+      }
+    });
+  }
+  
