@@ -1,45 +1,64 @@
 body {
-    background: #f5f7fa;
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-  }
-  
-  .painel-container {
-    background: white;
-    padding: 40px;
-    border-radius: 12px;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-    text-align: center;
-  }
-  
-  .painel-container h1 {
-    color: #3f87a6;
-    margin-bottom: 15px;
-  }
-  
-  .painel-container p {
-    margin-bottom: 30px;
-    font-size: 18px;
-    color: #444;
-  }
-  
-  button {
-    padding: 12px 24px;
-    background-color: #3f87a6;
-    color: white;
-    border: none;
-    border-radius: 6px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-  }
-  
-  button:hover {
-    background-color: #2e6d86;
-  }
-  
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(135deg, #232526, #414345);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.painel-container {
+  background-color: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+  text-align: center;
+  max-width: 600px;
+  width: 90%;
+}
+
+.painel-container h1 {
+  font-size: 32px;
+  margin-bottom: 10px;
+}
+
+.painel-container p {
+  font-size: 18px;
+  margin-bottom: 30px;
+}
+
+.placar {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30px;
+  gap: 15px;
+}
+
+.card {
+  flex: 1;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 15px;
+  border-radius: 10px;
+  font-size: 18px;
+}
+
+.acoes button {
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+  margin: 10px 0;
+  border: none;
+  border-radius: 10px;
+  background-color: #00b4d8;
+  color: white;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.acoes button:hover {
+  background-color: #0077b6;
+}

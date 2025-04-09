@@ -10,12 +10,25 @@
   <div class="painel-container">
     <h1>Bem-vindo ao Jokenverse!</h1>
     <p>Você está logado com sucesso.</p>
-    <button onclick="logout()">Sair</button>
+  
+    <div class="placar">
+      <div class="card"><strong>Vitórias:</strong> <span id="vitorias">0</span></div>
+      <div class="card"><strong>Derrotas:</strong> <span id="derrotas">0</span></div>
+      <div class="card"><strong>Empates:</strong> <span id="empates">0</span></div>
+    </div>
+  
+    <div class="acoes">
+      <button onclick="window.location.href = 'jokenpo.html'">Jogar Jokenpô</button>
+      <button onclick="abrirRanking()">Ver Ranking</button>
+      <button onclick="window.location.href = 'index.html'">Sair</button>
+    </div>
   </div>
+  
 
   <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-auth-compat.js"></script>
   <script src="js/auth.js"></script>
+  <script src="js/jokenpo.js"></script>
   <script>
     verificarSessaoPainel();
   </script>  
